@@ -1,0 +1,78 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main() {
+	int strNo{}, found{}, count{}, flag{};
+	vector<string> aVector;
+	string* anagramList;
+
+	cin >> strNo;
+	anagramList = new string[strNo];
+
+	
+	for (int i = 0;i < strNo;i++) {
+		cin >> anagramList[i];
+	}
+	//cout << "Anagram size: " << anagramList->length() << endl;
+	for (size_t i = 0;i < strNo;i++) {
+		flag = 0;
+		aVector.push_back(anagramList[i]);
+		
+		for (size_t j = i+1;j < strNo;j++) {
+			if ((anagramList[i].compare(anagramList[j])) == 0) {
+				continue;
+				//cout << "Hii its meee";
+				/*for (size_t k = 0;k < aVector.size();k++) {
+					if (aVector[k] == anagramList[j])
+						goto jmpPoint;
+				}
+				cout << "Vector size at c: " << aVector.size()<<endl;
+				aVector.push_back(anagramList[i]);
+				continue;*/
+			}
+			else {
+				if (anagramList[i].length() == anagramList[j].length()) {
+					count = 0;
+					found = anagramList[j].find_first_of(anagramList[i]);
+					while (found != -1) {
+						//cout << "Found: " << found << endl;
+						count++;
+						found = anagramList[j].find_first_of(anagramList[i], found + 1);
+					}
+					if ((size_t)count == anagramList[i].length()) {
+
+						
+						aVector.push_back(anagramList[j]);
+						//cout << "Second push : " << aVector.size() << endl;
+						flag = 1;
+					}
+						
+				}
+			}
+		/*jmpPoint:
+			continue;*/
+
+		}
+		if (aVector.empty()) {
+			continue;
+		}else if (flag == 0) {
+			aVector.pop_back();
+		}
+
+	}
+	//cout <<"Vector size : " <<aVector.size();
+	if (aVector.empty()) {
+		cout << "No match!"<<endl;
+	}
+	else {
+		//cout << "Hello";
+		cout << "Vector size : " << endl;
+		for (size_t k = 0;k < aVector.size();k++) {
+			cout << aVector[k] << endl;
+		}
+	}
+	
+	return 0;
+}

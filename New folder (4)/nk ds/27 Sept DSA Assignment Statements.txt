@@ -1,0 +1,198 @@
+1. COUNT ME IN !!!
+Statement:
+Given a number, determine the number of times each of its digits is repeated in the number.
+Input Specification:
+an integer
+Output Specification:
+list down all the digits of the integer in ascending order, each in a new line followed by its number of occurences separated by space
+Sample I/O:
+Input1:
+
+9999
+
+Output1:
+
+9 4
+
+Input2:
+
+10902030
+
+Output2:
+
+0 4
+
+1 1
+
+2 1
+
+3 1
+
+9 1
+
+2 1
+
+3 1
+=======================================================================================================================================
+2. CHOTU
+Statement:
+Write a complete program to find the length of  minimum subsequence of '1' in the given string of '0' & '1' s 
+
+for Example: 
+
+if the given string is '01111001110111011110001110111111
+
+Minimum subsequence of '1'  in the given string is '111' and the length is '3'. 
+
+Note: if there is no subsequence of '1' print '-1'
+Input Specification:
+A string containing the '0' & '1'  the length of the string will be not more than 100.
+Output Specification:
+Print the length of minimum subsequence of '1' s 
+
+if there is no subsequence of '1' then just print '-1'
+Sample I/O:
+Input
+
+0110110011110111110111
+
+Output
+
+2
+
+Input
+
+00000
+
+Output
+
+-1
+================================================================================================================
+3. MOTU 
+Statement:
+Write a complete program to find the length of maximum subsequence of '1' in the given string as '0' & '1' 
+
+if there is no subsequence of '1' print '-1'
+Input: 
+A string containing the '0' & '1'  the length of the string will be not more than hundred
+Output:
+Print the length of maximum subsequence of '1' s 
+Sample I/O:
+Input
+
+10110111101010111101
+
+Output
+
+4
+
+Input
+
+01101
+
+Output
+
+2
+==================================================================================================================
+4. MY APPA, MY AMMA!!! 
+Statement:
+Most crossword puzzle fans are used to anagrams--groups of words with the same letters in different orders--for example OPTS, SPOT, STOP, POTS and POST. Some words however do not have this attribute, no matter how you rearrange their letters, you cannot form another word. Such words are called ananagrams, an example is QUIZ.
+
+Obviously such definitions depend on the domain within which we are working; you might think that ATHENE is an ananagram, whereas any chemist would quickly produce ETHANE. One possible domain would be the entire English language, but this could lead to some problems. One could restrict the domain to, say, Music, in which case SCALE becomes a relative ananagram (LACES is not in the same domain) but NOTE is not since it can produce TONE.
+
+Write a program that will read in the dictionary of a restricted domain and determine the anagrams. The dictionary will contain no more than 100 words.
+
+NOTE: Usage of Java Collection APIs is NOT PERMITTED
+Input:
+First line of Input will consist of an Integer N (the size of dictionary 2<=N<=100), followed by N number of lines. Each line consists of a word. Each word consists of up to 20 lower case letters.
+
+Note: No duplicate words are present.
+Output:
+Print all the anagram Words, each word in separate line, terminated by newline character and maintaining the input order. There will always be at least more than one anagram.
+Sample I/O:
+Sample Input 1
+
+5
+dealer 
+came 
+tape 
+soon 
+leader
+
+Sample Output 1
+
+dealer
+leader
+
+Sample Input 2
+
+6
+rofff
+one
+rooff
+eon
+fofor
+two
+
+Sample Output 2
+
+one
+rooff
+eon
+fofor
+======================================================================================================================
+5. KITNE AADMI THE ?
+Statement:
+You have to write a program to count the number of words in the input. The program should read in the input text till end_of_file (EOF) and output the number of words found. A word can be taken to be a sequence of alphanumeric characters terminated by a space or by a newline. Assume that there will not be any characters other than alphanumeric (a-z, A-Z, 0-9) and white spaces (blank, tabs and newlines) in the input.
+Input:
+a paragraph comprising of alphabets, numerals and white spaces.
+Output:
+a single integer representing the number of words in the paragraph
+Sample I/O:
+Input:
+This is a sample line of text
+This is another line of text
+This line is the 3rd line
+This junk line contains 989902 99dsaWjJ8            015
+This is the fifth and the last line of input
+Output:
+36
+
+Input:
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+Output:
+1
+============================================================================================================================================================
+6. HASH KARO, PRIZE PAO 
+Statement:
+Consider a hash table of size N, numbered 0 to N-1. Write a program to insert integers into this hast table based on the hashing algorithm mentioned below.
+
+i - the integer to be inserted into the hast table.
+j - the index location for insertion of the integer, i, computed as j = i mod N. If this, j-th location is empty then put the element at this position else compute again for the next location as follows:
+
+(a) Remove the right most digit of i. Using the new value of i, recompute j = i mod N. If the digit removed was odd, then move j locations forward from the current location else move j locations backward from the current location (assume 0 as even). Note that this move will wrap around both the edges of the table.
+
+(b) Keep repeating step (a) till a free location is found or all the digits of i are exhaused. When i comes to only one digit, and its last remaining digit is removed, consider the number remaining is zero - therefore, this will lead to a zero-step move.
+
+(c) If all the digits of i have been removed/exhaused and yet a free location is not found, then start moving in the direction corresponding (odd or even) to the last digit removed. Keep moving till you detect a free location.
+
+Assume that the number of integers inserted is not more than the table size.
+
+Note: Usage of C++ libraries is not permitted except those for input and output.
+Input:
+- The first line is an integer N, the table size.
+- On the next line will be the list of positive integers that need to be inserted into the table. The integers will be separated by a space each, and the last integer will be -1 indicating end of input. (-1 is not to be inserted into the table).
+Output:
+The output should contain, for each integer, the locations that were checked while trying to insert that integer (including the location in which the integer was finally inserted). The locations checked for each of the integers should be output on a line by itself, separated by one space each, each line being terminated by a new line.
+Sample I/O:
+Input 1:
+7
+38 52 145 16 179 4 -1
+
+Output 1:
+3
+3 5
+5 5 4
+2
+4 0
+4 4 3 2 1
